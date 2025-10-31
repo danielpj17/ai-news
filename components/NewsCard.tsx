@@ -18,10 +18,16 @@ export default function NewsCard({
   publishedAt,
   url,
 }: NewsCardProps) {
-  const formattedDate = new Date(publishedAt).toLocaleDateString("en-US", {
+  const articleDate = new Date(publishedAt);
+  const formattedDate = articleDate.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
+  });
+  const formattedTime = articleDate.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
   });
 
   return (
@@ -43,7 +49,7 @@ export default function NewsCard({
       )}
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-gray-500">{source}</span>
-        <span className="text-xs text-gray-500">{formattedDate}</span>
+        <span className="text-xs text-gray-500">{formattedDate} at {formattedTime}</span>
       </div>
       <Link
         href={url}

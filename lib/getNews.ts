@@ -14,7 +14,6 @@ interface GNewsResponse {
 }
 
 export async function getNews(): Promise<Article[]> {
-  // @ts-expect-error - process.env is available in Next.js server components
   const apiKey: string | undefined = process.env.GNEWS_API_KEY;
 
   if (!apiKey) {

@@ -1,24 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI News Hub
+
+A minimal AI News Hub built with Next.js and Tailwind CSS that aggregates AI-related articles from multiple news sources.
+
+## Features
+
+- Aggregates news from 6 different APIs:
+  - [GNews API](https://gnews.io/)
+  - [NewsAPI](https://newsapi.org/)
+  - [NewsData.io](https://newsdata.io/)
+  - [Mediastack](https://mediastack.com/)
+  - [NewsCatcher API](https://newscatcher.com/)
+  - [Currents API](https://currentsapi.services/)
+- Automatically deduplicates articles
+- Sorts articles by publication date (newest first)
+- Mobile-first responsive design
+- Optimized image loading with Next.js Image component
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up API Keys
+
+Create a `.env.local` file in the root directory and add your API keys:
+
+```env
+GNEWS_API_KEY=your_gnews_api_key
+NEWS_API_KEY=your_newsapi_key
+NEWSDATA_API_KEY=your_newsdata_api_key
+MEDIASTACK_API_KEY=your_mediastack_api_key
+NEWSCATCHER_API_KEY=your_newscatcher_api_key
+CURRENTS_API_KEY=your_currents_api_key
+```
+
+**Note:** You can use one or all APIs. The app will work with any combination - APIs without keys will simply be skipped.
+
+#### Get Your API Keys:
+
+- **GNews**: [https://gnews.io/](https://gnews.io/)
+- **NewsAPI**: [https://newsapi.org/](https://newsapi.org/)
+- **NewsData.io**: [https://newsdata.io/](https://newsdata.io/)
+- **Mediastack**: [https://mediastack.com/](https://mediastack.com/)
+- **NewsCatcher**: [https://newscatcher.com/](https://newscatcher.com/)
+- **Currents API**: [https://currentsapi.services/](https://currentsapi.services/)
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
